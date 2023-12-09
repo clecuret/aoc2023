@@ -7,7 +7,7 @@ for l in lines:
 	alls=[]
 	data=[*map(int,l.split())]
 	curr=data
-	while sum(curr)!=0 or curr[0]!=0:
+	while not all(el==0 for el in curr):
 		differences = [b - a for a, b in zip(curr, curr[1:])]
 		alls.append([curr[-1], curr[0]])
 		curr=differences
